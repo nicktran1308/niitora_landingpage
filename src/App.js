@@ -29,8 +29,8 @@ const Home = React.memo(() => {
   useEffect(() => {
     const preloadImages = () => {
       const images = [
-        `${process.env.PUBLIC_URL}/assets/images/mainpic.jpg`,
-        `${process.env.PUBLIC_URL}/assets/icons/logo_transparency.png`,
+        '/assets/images/mainpic.jpg',
+        '/assets/icons/logo_transparency.png',
       ];
       images.forEach(src => {
         const img = new Image();
@@ -43,7 +43,7 @@ const Home = React.memo(() => {
 
   const handleResumeClick = () => {
     // Add timestamp to force fresh fetch and bypass browser cache when resume file is updated
-    window.open(`${process.env.PUBLIC_URL}/assets/icons/docs/resume_full.pdf?v=${Date.now()}#view=FitH`, '_blank', 'noopener,noreferrer');
+    window.open(`/assets/icons/docs/resume_full.pdf?v=${Date.now()}#view=FitH`, '_blank', 'noopener,noreferrer');
   };
 
   return (
@@ -52,7 +52,7 @@ const Home = React.memo(() => {
         <Background />
         
         <header className="header">
-          <img src={`${process.env.PUBLIC_URL}/assets/icons/logo_transparency.png`} alt="Logo" className="logo" />
+          <img src="/assets/icons/logo_transparency.png" alt="Logo" className="logo" />
         </header>
         
         <main className="main">
