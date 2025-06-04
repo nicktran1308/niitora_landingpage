@@ -22,7 +22,6 @@
   border: 2px solid var(--border-color);
   border-radius: 25px;
   padding: 3rem;
-  animation: fadeIn 1s ease-out;
 }
 
 .portrait-container {
@@ -36,7 +35,6 @@
   height: auto;
   border-radius: 20px;
   box-shadow: 0 0 20px var(--shadow-color);
-  animation: glitch 1s ease-out;
 }
 
 .linkedin-link {
@@ -86,7 +84,6 @@
   color: var(--text-color);
   font-size: clamp(1.5rem, 3vw, 2.5rem);
   text-shadow: 0 0 10px var(--shadow-color);
-  animation: glitch var(--glitch-duration) infinite;
 }
 
 .subheader {
@@ -122,19 +119,7 @@
   border-radius: 50px;
   background-color: rgba(255, 255, 255, 0.1);
   text-align: center;
-  animation: pulse 2s infinite;
-}
-
-@keyframes pulse {
-  0% {
-    box-shadow: 0 0 5px var(--shadow-color);
-  }
-  50% {
-    box-shadow: 0 0 15px var(--shadow-color);
-  }
-  100% {
-    box-shadow: 0 0 5px var(--shadow-color);
-  }
+  box-shadow: 0 0 5px var(--shadow-color);
 }
 
 /* Back Button Styles */
