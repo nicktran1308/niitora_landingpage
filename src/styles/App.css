@@ -1,0 +1,324 @@
+/* Global styles */
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+:root {
+  --glitch-duration: 0.9s;
+  --text-color: rgba(255, 255, 255, 0.9);
+  --border-color: rgba(255, 255, 255, 0.8);
+  --hover-color: rgba(255, 255, 255, 0.15);
+  --shadow-color: rgba(255, 255, 255, 0.5);
+}
+
+.app {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  overflow: hidden;
+  will-change: transform;
+}
+
+.background-overlay {
+  position: absolute;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.4);
+  z-index: 1;
+  animation: scanline 8s linear infinite;
+}
+
+/* Scanline effect */
+.background-overlay::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 5px;
+  background: rgba(255, 255, 255, 0.1);
+  animation: scanline 6s linear infinite;
+  will-change: transform;
+}
+
+/* Header styles */
+.header {
+  padding: 0;
+  text-align: center;
+  position: relative;
+  z-index: 2;
+  margin-top: 15vh;
+  animation: glitch 1s ease-out;
+}
+
+.logo {
+  max-width: 300px;
+  width: 90%;
+  height: auto;
+  margin: 0 auto;
+  filter: brightness(0) invert(1) drop-shadow(0 0 5px var(--shadow-color));
+  transition: transform 0.2s ease;
+  will-change: transform, filter;
+}
+
+.logo:hover {
+  animation: glitch var(--glitch-duration) infinite;
+}
+
+.logo:active {
+  transform: scale(0.98);
+  animation: none;
+}
+
+/* Main content styles */
+.main {
+  flex: 1;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  position: relative;
+  z-index: 2;
+  margin-top: 2rem;
+}
+
+.navigation {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+  padding: 2rem;
+  width: 100%;
+  max-width: 400px;
+  animation: fadeIn 1s ease-out 0.5s both;
+}
+
+.nav-button {
+  padding: 1rem 3rem;
+  font-family: 'Press Start 2P', cursive;
+  font-size: clamp(0.8rem, 2vw, 1rem);
+  background-color: rgba(0, 0, 0, 0.7);
+  border: 2px solid var(--border-color);
+  color: var(--text-color);
+  cursor: pointer;
+  border-radius: 50px;
+  min-width: 200px;
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+  text-shadow: 0 0 5px var(--shadow-color);
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+  will-change: transform, background-color, box-shadow;
+}
+
+.button-text {
+  position: relative;
+  z-index: 1;
+}
+
+.nav-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    90deg,
+    transparent,
+    var(--hover-color),
+    transparent
+  );
+  transition: transform 0.5s;
+  will-change: transform;
+}
+
+.nav-button:hover {
+  background-color: var(--hover-color);
+  transform: translateY(-2px);
+  box-shadow: 0 0 20px var(--shadow-color);
+  animation: buttonGlitch 0.3s infinite;
+}
+
+.nav-button:hover::before {
+  transform: translateX(200%);
+}
+
+.nav-button:active {
+  transform: translateY(2px);
+}
+
+/* Footer styles */
+.footer {
+  padding: 1rem 2rem;
+  background-color: rgba(0, 0, 0, 0.7);
+  position: relative;
+  z-index: 2;
+  border-top: 1px solid var(--border-color);
+}
+
+.copyright {
+  position: absolute;
+  left: 20px;
+  bottom: 15px;
+  font-family: 'Press Start 2P', cursive;
+  font-size: 0.6rem;
+  color: var(--text-color);
+  text-shadow: 0 0 5px var(--shadow-color);
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+  animation: fadeIn 1s ease-out 1s both;
+}
+
+.copyright-text {
+  opacity: 0.8;
+}
+
+.copyright-year {
+  font-size: 0.5rem;
+  opacity: 0.6;
+}
+
+/* Animations */
+@keyframes scanline {
+  0% {
+    transform: translateY(-100%);
+  }
+  100% {
+    transform: translateY(100vh);
+  }
+}
+
+@keyframes glitch {
+  0% {
+    transform: translate(0);
+  }
+  20% {
+    transform: translate(-2px, 2px);
+  }
+  40% {
+    transform: translate(2px, -2px);
+  }
+  60% {
+    transform: translate(-2px, -2px);
+  }
+  80% {
+    transform: translate(2px, 2px);
+  }
+  100% {
+    transform: translate(0);
+  }
+}
+
+@keyframes buttonGlitch {
+  0%, 100% {
+    transform: translateY(-2px) skewX(0deg);
+  }
+  20% {
+    transform: translateY(-2px) skewX(-2deg);
+  }
+  40% {
+    transform: translateY(-2px) skewX(2deg);
+  }
+  60% {
+    transform: translateY(-2px) skewX(-1deg);
+  }
+  80% {
+    transform: translateY(-2px) skewX(1deg);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .header {
+    margin-top: 10vh;
+  }
+
+  .navigation {
+    padding: 1.5rem;
+  }
+
+  .nav-button {
+    padding: 0.8rem 2rem;
+  }
+
+  .copyright {
+    left: 10px;
+    bottom: 10px;
+    font-size: 0.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .header {
+    margin-top: 8vh;
+  }
+
+  .logo {
+    max-width: 250px;
+  }
+
+  .navigation {
+    padding: 1rem;
+    gap: 1rem;
+  }
+
+  .nav-button {
+    min-width: 160px;
+    padding: 0.7rem 1.5rem;
+    font-size: 0.7rem;
+  }
+
+  .copyright {
+    font-size: 0.4rem;
+  }
+}
+
+/* Accessibility */
+.nav-button:focus {
+  outline: none;
+  box-shadow: 0 0 0 3px var(--shadow-color), 0 0 20px var(--shadow-color);
+  border-radius: 50px;
+}
+
+.App {
+  text-align: center;
+}
+
+.App-logo {
+  height: 40vmin;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  .App-logo {
+    animation: App-logo-spin infinite 20s linear;
+  }
+}
+
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+html {
+  scroll-behavior: smooth;
+}

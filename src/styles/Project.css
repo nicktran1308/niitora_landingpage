@@ -1,0 +1,355 @@
+/* Import shared styles */
+@import './App.css';
+
+.project-content {
+  flex: 1;
+  padding: 2rem;
+  margin-top: 40px;
+  padding-top: calc(2rem + 60px);
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.project-title {
+  font-family: 'Press Start 2P', cursive;
+  color: var(--text-color);
+  text-align: center;
+  font-size: clamp(1.5rem, 3vw, 2.5rem);
+  margin-bottom: 3rem;
+  text-shadow: 0 0 10px var(--shadow-color);
+  animation: glitch 1s ease-out;
+}
+
+.carousel-container {
+  width: 100%;
+  max-width: 1400px;
+  height: 500px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  perspective: 1500px;
+  margin: 0 auto;
+}
+
+.carousel-view {
+  width: 100%;
+  height: 100%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transform-style: preserve-3d;
+}
+
+.project-card {
+  position: absolute;
+  width: 60%;
+  max-width: 600px;
+  aspect-ratio: 3/2;
+  transition: all 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+  border: 2px solid var(--border-color);
+  border-radius: 15px;
+  overflow: hidden;
+  background-color: rgba(0, 0, 0, 0.7);
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+  will-change: transform, opacity;
+  pointer-events: none;
+}
+
+.project-card.active {
+  box-shadow: 0 0 30px var(--shadow-color);
+  pointer-events: auto;
+}
+
+.project-image-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.project-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+
+.project-card.active:hover .project-image {
+  transform: scale(1.05);
+}
+
+.project-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 1.5rem;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.project-card.active:hover .project-overlay {
+  opacity: 1;
+}
+
+.project-name {
+  font-family: 'Press Start 2P', cursive;
+  color: var(--text-color);
+  font-size: clamp(0.8rem, 1.5vw, 1.2rem);
+  text-align: center;
+  margin-bottom: 1rem;
+  text-shadow: 0 0 5px var(--shadow-color);
+}
+
+.project-description {
+  color: var(--text-color);
+  text-align: center;
+  font-size: clamp(0.7rem, 1.2vw, 0.9rem);
+  margin-bottom: 1rem;
+  opacity: 0.9;
+}
+
+.carousel-button {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 50px;
+  height: 50px;
+  border: 2px solid var(--border-color);
+  border-radius: 50%;
+  background-color: rgba(0, 0, 0, 0.7);
+  color: var(--text-color);
+  cursor: pointer;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 10px var(--shadow-color);
+}
+
+.prev-button {
+  left: 2rem;
+}
+
+.next-button {
+  right: 2rem;
+}
+
+.carousel-button svg {
+  width: 24px;
+  height: 24px;
+  fill: var(--text-color);
+  filter: drop-shadow(0 0 2px var(--shadow-color));
+}
+
+.carousel-button:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  transform: translateY(-50%) scale(1.1);
+  box-shadow: 0 0 15px var(--shadow-color);
+}
+
+.carousel-button:active {
+  transform: translateY(-50%) scale(0.95);
+}
+
+.carousel-indicators {
+  display: flex;
+  gap: 1rem;
+  margin-top: 2rem;
+}
+
+.indicator {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: 2px solid var(--border-color);
+  background-color: transparent;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 5px var(--shadow-color);
+}
+
+.indicator.active {
+  background-color: var(--text-color);
+  box-shadow: 0 0 10px var(--shadow-color);
+}
+
+.github-link {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  width: 35px;
+  height: 35px;
+  background-color: rgba(0, 0, 0, 0.7);
+  border-radius: 50%;
+  padding: 7px;
+  border: 2px solid var(--border-color);
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 10px var(--shadow-color);
+}
+
+.github-icon {
+  width: 100%;
+  height: 100%;
+  fill: var(--text-color);
+  filter: drop-shadow(0 0 2px var(--shadow-color));
+  transition: all 0.3s ease;
+}
+
+.github-link:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 15px var(--shadow-color);
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.github-link:hover .github-icon {
+  filter: drop-shadow(0 0 5px var(--shadow-color));
+}
+
+.project-pixel-decoration {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 4px;
+  display: flex;
+  gap: 4px;
+  padding: 0 4px;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.pixel-block {
+  flex: 1;
+  height: 100%;
+  background-color: var(--text-color);
+  animation: pixelPulse 2s infinite;
+  will-change: opacity;
+}
+
+.pixel-block:nth-child(2) {
+  animation-delay: 0.3s;
+}
+
+.pixel-block:nth-child(3) {
+  animation-delay: 0.6s;
+}
+
+@keyframes pixelPulse {
+  0%, 100% {
+    opacity: 0.3;
+  }
+  50% {
+    opacity: 0.8;
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+  .carousel-container {
+    height: 400px;
+  }
+
+  .project-card {
+    width: 70%;
+  }
+
+  .carousel-button {
+    width: 40px;
+    height: 40px;
+  }
+
+  .carousel-button svg {
+    width: 20px;
+    height: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .project-content {
+    padding: 1.5rem;
+    padding-top: calc(1.5rem + 50px);
+  }
+
+  .carousel-container {
+    height: 300px;
+  }
+
+  .project-card {
+    width: 80%;
+  }
+
+  .carousel-button {
+    width: 35px;
+    height: 35px;
+  }
+
+  .prev-button {
+    left: 1rem;
+  }
+
+  .next-button {
+    right: 1rem;
+  }
+
+  .github-link {
+    width: 30px;
+    height: 30px;
+    padding: 6px;
+  }
+}
+
+@media (max-width: 480px) {
+  .project-content {
+    padding: 1rem;
+    padding-top: calc(1rem + 45px);
+  }
+
+  .carousel-container {
+    height: 250px;
+  }
+
+  .project-card {
+    width: 90%;
+  }
+
+  .project-name {
+    font-size: 0.8rem;
+  }
+
+  .project-description {
+    font-size: 0.7rem;
+  }
+
+  .github-link {
+    width: 25px;
+    height: 25px;
+    padding: 5px;
+  }
+
+  .carousel-button {
+    width: 30px;
+    height: 30px;
+  }
+
+  .carousel-button svg {
+    width: 16px;
+    height: 16px;
+  }
+
+  .indicator {
+    width: 8px;
+    height: 8px;
+  }
+} 

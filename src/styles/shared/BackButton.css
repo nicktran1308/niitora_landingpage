@@ -1,0 +1,115 @@
+.back-button {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 20px;
+  background-color: rgba(0, 0, 0, 0.4);
+  border: 2px solid var(--border-color);
+  border-radius: 50px;
+  color: var(--text-color);
+  font-family: 'Press Start 2P', cursive;
+  font-size: 0.8rem;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 0 10px var(--shadow-color);
+  text-shadow: 0 0 5px var(--shadow-color);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  transform: translateX(0);
+}
+
+.back-button.scrolled {
+  background-color: rgba(0, 0, 0, 0.85);
+  transform: translateX(calc(-100% + 50px));
+  border-radius: 0 50px 50px 0;
+  padding: 12px 15px 12px 45px;
+}
+
+.back-button.scrolled:hover {
+  transform: translateX(0);
+}
+
+.back-button.scrolled .back-text {
+  opacity: 0;
+  width: 0;
+  overflow: hidden;
+}
+
+.back-button.scrolled:hover .back-text {
+  opacity: 1;
+  width: auto;
+  margin-left: 8px;
+}
+
+.back-icon {
+  width: 20px;
+  height: 20px;
+  fill: var(--text-color);
+  filter: drop-shadow(0 0 2px var(--shadow-color));
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  flex-shrink: 0;
+}
+
+.back-text {
+  transform: translateY(1px);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  white-space: nowrap;
+}
+
+.back-button:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 0 15px var(--shadow-color);
+}
+
+.back-button:hover .back-icon {
+  transform: translateX(-3px);
+}
+
+.back-button:active {
+  transform: scale(0.98);
+}
+
+.back-button.scrolled:active {
+  transform: translateX(5px) scale(0.98);
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .back-button {
+    top: 15px;
+    left: 15px;
+    padding: 10px 16px;
+    font-size: 0.7rem;
+  }
+
+  .back-button.scrolled {
+    padding: 10px 12px 10px 35px;
+  }
+
+  .back-icon {
+    width: 18px;
+    height: 18px;
+  }
+}
+
+@media (max-width: 480px) {
+  .back-button {
+    top: 10px;
+    left: 10px;
+    padding: 8px 14px;
+    font-size: 0.6rem;
+  }
+
+  .back-button.scrolled {
+    padding: 8px 10px 8px 30px;
+  }
+
+  .back-icon {
+    width: 16px;
+    height: 16px;
+  }
+} 

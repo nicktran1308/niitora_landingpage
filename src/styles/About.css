@@ -1,0 +1,418 @@
+.about-content {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: 2;
+  padding: 2rem;
+  margin-top: 40px;
+  padding-top: calc(2rem + 60px);
+  padding-bottom: 2rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
+}
+
+.about-container {
+  display: flex;
+  gap: 4rem;
+  max-width: 1200px;
+  width: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+  border: 2px solid var(--border-color);
+  border-radius: 25px;
+  padding: 3rem;
+  animation: fadeIn 1s ease-out;
+}
+
+.portrait-container {
+  flex: 1;
+  max-width: 400px;
+  position: relative;
+}
+
+.portrait {
+  width: 100%;
+  height: auto;
+  border-radius: 20px;
+  box-shadow: 0 0 20px var(--shadow-color);
+  animation: glitch 1s ease-out;
+}
+
+.linkedin-link {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  width: 40px;
+  height: 40px;
+  background-color: rgba(0, 0, 0, 0.7);
+  border-radius: 50%;
+  padding: 8px;
+  border: 2px solid var(--border-color);
+  transition: all 0.3s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 10px var(--shadow-color);
+}
+
+.linkedin-icon {
+  width: 100%;
+  height: 100%;
+  fill: var(--text-color);
+  filter: drop-shadow(0 0 2px var(--shadow-color));
+  transition: all 0.3s ease;
+}
+
+.linkedin-link:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 15px var(--shadow-color);
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.linkedin-link:hover .linkedin-icon {
+  filter: drop-shadow(0 0 5px var(--shadow-color));
+}
+
+.info-container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.name {
+  font-family: 'Press Start 2P', cursive;
+  color: var(--text-color);
+  font-size: clamp(1.5rem, 3vw, 2.5rem);
+  text-shadow: 0 0 10px var(--shadow-color);
+  animation: glitch var(--glitch-duration) infinite;
+}
+
+.subheader {
+  font-family: 'Press Start 2P', cursive;
+  color: var(--text-color);
+  font-size: clamp(1rem, 2vw, 1.4rem);
+  text-shadow: 0 0 8px var(--shadow-color);
+  opacity: 0.9;
+  margin-bottom: 1rem;
+}
+
+.introduction {
+  color: var(--text-color);
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.introduction p {
+  font-size: clamp(0.9rem, 1.5vw, 1.1rem);
+  line-height: 1.8;
+  opacity: 0.9;
+  text-shadow: 0 0 5px var(--shadow-color);
+}
+
+.highlight {
+  font-family: 'Press Start 2P', cursive;
+  font-size: clamp(0.8rem, 1.2vw, 1rem) !important;
+  color: var(--text-color);
+  text-shadow: 0 0 8px var(--shadow-color) !important;
+  padding: 1rem;
+  border: 2px solid var(--border-color);
+  border-radius: 50px;
+  background-color: rgba(255, 255, 255, 0.1);
+  text-align: center;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    box-shadow: 0 0 5px var(--shadow-color);
+  }
+  50% {
+    box-shadow: 0 0 15px var(--shadow-color);
+  }
+  100% {
+    box-shadow: 0 0 5px var(--shadow-color);
+  }
+}
+
+/* Back Button Styles */
+.back-button {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 20px;
+  background-color: rgba(0, 0, 0, 0.4);
+  border: 2px solid var(--border-color);
+  border-radius: 50px;
+  color: var(--text-color);
+  font-family: 'Press Start 2P', cursive;
+  font-size: 0.8rem;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 0 10px var(--shadow-color);
+  text-shadow: 0 0 5px var(--shadow-color);
+  backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
+  transform: translateX(0);
+}
+
+.back-button.scrolled {
+  background-color: rgba(0, 0, 0, 0.85);
+  transform: translateX(calc(-100% + 50px));
+  border-radius: 0 50px 50px 0;
+  padding: 12px 15px 12px 45px;
+}
+
+.back-button.scrolled:hover {
+  transform: translateX(0);
+}
+
+.back-button.scrolled .back-text {
+  opacity: 0;
+  width: 0;
+  overflow: hidden;
+}
+
+.back-button.scrolled:hover .back-text {
+  opacity: 1;
+  width: auto;
+  margin-left: 8px;
+}
+
+.back-icon {
+  width: 20px;
+  height: 20px;
+  fill: var(--text-color);
+  filter: drop-shadow(0 0 2px var(--shadow-color));
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  flex-shrink: 0;
+}
+
+.back-text {
+  transform: translateY(1px);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  white-space: nowrap;
+}
+
+.back-button:hover {
+  background-color: rgba(255, 255, 255, 0.1);
+  box-shadow: 0 0 15px var(--shadow-color);
+}
+
+.back-button:hover .back-icon {
+  transform: translateX(-3px);
+}
+
+.back-button:active {
+  transform: scale(0.98);
+}
+
+.back-button.scrolled:active {
+  transform: translateX(5px) scale(0.98);
+}
+
+/* Responsive adjustments */
+@media (max-width: 968px) {
+  .about-content {
+    padding: 1.5rem;
+  }
+
+  .about-container {
+    padding: 2rem;
+    gap: 2rem;
+  }
+
+  .portrait-container {
+    max-width: 300px;
+  }
+}
+
+@media (max-width: 480px) {
+  .about-content {
+    padding: 1rem;
+  }
+
+  .about-container {
+    padding: 1.5rem;
+    gap: 1.5rem;
+  }
+
+  .portrait-container {
+    max-width: 250px;
+  }
+
+  .name {
+    font-size: 1.2rem;
+  }
+
+  .subheader {
+    font-size: 0.9rem;
+  }
+
+  .introduction p {
+    font-size: 0.85rem;
+    line-height: 1.6;
+  }
+
+  .highlight {
+    font-size: 0.7rem !important;
+    padding: 0.8rem;
+  }
+
+  .linkedin-link {
+    width: 30px;
+    height: 30px;
+    padding: 6px;
+  }
+
+  .back-button {
+    top: 15px;
+    left: 15px;
+    padding: 8px 14px;
+    font-size: 0.6rem;
+  }
+
+  .back-button.scrolled {
+    padding: 8px 10px 8px 30px;
+  }
+
+  .back-icon {
+    width: 16px;
+    height: 16px;
+  }
+
+  .about-content {
+    padding-top: calc(1rem + 45px);
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-bottom: 1rem;
+  }
+}
+
+/* Remove all animation-related styles */
+/* Animation Container */
+.animation-container,
+.pixel-character,
+.character-body,
+.character-legs,
+.ground,
+.ground-line,
+.pixel-blocks,
+.block,
+@keyframes bounce,
+@keyframes run,
+@keyframes moveBlocks,
+@keyframes glitchCharacter {
+  display: none;
+}
+
+/* Responsive Design */
+@media (max-width: 968px) {
+  .about-container {
+    flex-direction: column;
+    gap: 2rem;
+    align-items: center;
+    padding: 2rem;
+  }
+
+  .portrait-container {
+    max-width: 300px;
+  }
+
+  .info-container {
+    text-align: center;
+  }
+
+  .linkedin-link {
+    top: 10px;
+    right: 10px;
+    width: 35px;
+    height: 35px;
+  }
+
+  .back-button {
+    padding: 10px 16px;
+    font-size: 0.7rem;
+  }
+
+  .back-button.scrolled {
+    padding: 10px 12px 10px 35px;
+  }
+
+  .back-icon {
+    width: 18px;
+    height: 18px;
+  }
+
+  .about-content {
+    padding-top: calc(2rem + 50px);
+  }
+}
+
+@media (max-width: 480px) {
+  .about-content {
+    padding: 1rem;
+  }
+
+  .about-container {
+    padding: 1.5rem;
+    gap: 1.5rem;
+  }
+
+  .portrait-container {
+    max-width: 250px;
+  }
+
+  .name {
+    font-size: 1.2rem;
+  }
+
+  .subheader {
+    font-size: 0.9rem;
+  }
+
+  .introduction p {
+    font-size: 0.85rem;
+    line-height: 1.6;
+  }
+
+  .highlight {
+    font-size: 0.7rem !important;
+    padding: 0.8rem;
+  }
+
+  .linkedin-link {
+    width: 30px;
+    height: 30px;
+    padding: 6px;
+  }
+
+  .back-button {
+    top: 15px;
+    left: 15px;
+    padding: 8px 14px;
+    font-size: 0.6rem;
+  }
+
+  .back-button.scrolled {
+    padding: 8px 10px 8px 30px;
+  }
+
+  .back-icon {
+    width: 16px;
+    height: 16px;
+  }
+
+  .about-content {
+    padding-top: calc(1rem + 45px);
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-bottom: 1rem;
+  }
+} 
