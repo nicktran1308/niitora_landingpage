@@ -1,0 +1,21 @@
+{
+  "files": {
+    "main.css": "/niitora_landingpage/static/css/main.92328920.css",
+    "main.js": "/niitora_landingpage/static/js/main.29176260.js",
+    "static/css/513.e3464b42.chunk.css": "/niitora_landingpage/static/css/513.e3464b42.chunk.css",
+    "static/js/513.e9383616.chunk.js": "/niitora_landingpage/static/js/513.e9383616.chunk.js",
+    "static/css/107.420abadf.chunk.css": "/niitora_landingpage/static/css/107.420abadf.chunk.css",
+    "static/js/107.b6c999a7.chunk.js": "/niitora_landingpage/static/js/107.b6c999a7.chunk.js",
+    "index.html": "/niitora_landingpage/index.html",
+    "main.92328920.css.map": "/niitora_landingpage/static/css/main.92328920.css.map",
+    "main.29176260.js.map": "/niitora_landingpage/static/js/main.29176260.js.map",
+    "513.e3464b42.chunk.css.map": "/niitora_landingpage/static/css/513.e3464b42.chunk.css.map",
+    "513.e9383616.chunk.js.map": "/niitora_landingpage/static/js/513.e9383616.chunk.js.map",
+    "107.420abadf.chunk.css.map": "/niitora_landingpage/static/css/107.420abadf.chunk.css.map",
+    "107.b6c999a7.chunk.js.map": "/niitora_landingpage/static/js/107.b6c999a7.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.92328920.css",
+    "static/js/main.29176260.js"
+  ]
+}
