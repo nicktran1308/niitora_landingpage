@@ -57,20 +57,25 @@ const About = React.memo(() => {
             <h2 className="subheader">Welcome to my digital realm!</h2>
             <div className="introduction">
               <p>
-                I'm an aspiring AI/ML specialist passionate about integrating technology into education and beyond. 
-                Currently pursuing my Master's in Computer Science at California State University, Fullerton, with 
-                a specialization in AI & Machine Learning, I bring a unique blend of technical expertise and research experience.
+                I'm an aspiring Program/Technical Program Manager passionate about integrating AI/ML technology 
+                into education and beyond. Currently pursuing my Master's in Computer Science at California State 
+                University, Fullerton, with a specialization in AI & Machine Learning, I bring a unique blend of 
+                technical expertise and product development experience.
               </p>
               <p>
-                As a Research Assistant at the USC Institute for Creative Technologies, I've helped develop AI-driven 
-                educational tools—such as dialog-based tutors and personalized learning systems—leveraging Large Language 
-                Models (LLMs), AWS, and adaptive learning frameworks. Lately, my focus has shifted toward Agentic AI 
-                Architectures, where I explore how autonomous, goal-driven AI systems can reason, plan, and act in 
-                dynamic environments. I'm particularly excited by their potential to redefine human-AI collaboration 
-                and learning experiences.
+                As a Research Assistant at the USC Institute for Creative Technologies, I've contributed to developing 
+                AI-driven educational products—such as dialog-based tutors and personalized learning systems—leveraging 
+                Large Language Models (LLMs), AWS, and adaptive learning frameworks. This experience has given me deep 
+                insight into translating complex AI research into practical, user-focused solutions.
+              </p>
+              <p>
+                Lately, I've been exploring Agentic AI Architectures and their product potential, particularly how 
+                autonomous, goal-driven AI systems can create new opportunities for human-AI collaboration and enhanced 
+                learning experiences. I'm excited about leading product initiatives that harness these emerging 
+                technologies to solve real-world problems.
               </p>
               <p className="highlight">
-                EPSI ML Intern @ Apple  Summer 2025
+                EPSI Program Management Intern @ Apple  Summer 2025
               </p>
               <p>
                 Let's connect to explore the frontiers of intelligent, agentic systems!
