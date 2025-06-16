@@ -58,21 +58,18 @@ const About = React.memo(() => {
             <div className="introduction">
               <p>
                 I'm an aspiring Program/Technical Program Manager passionate about integrating AI/ML technology 
-                into education and beyond. Currently pursuing my Master's in Computer Science at California State 
-                University, Fullerton, with a specialization in AI & Machine Learning, I bring a unique blend of 
-                technical expertise and product development experience.
+                into education. Currently pursuing my Master's in Computer Science at CSU Fullerton with a 
+                specialization in AI & Machine Learning, I combine technical expertise with product development experience.
               </p>
               <p>
-                As a Research Assistant at the USC Institute for Creative Technologies, I've contributed to developing 
-                AI-driven educational products—such as dialog-based tutors and personalized learning systems—leveraging 
-                Large Language Models (LLMs), AWS, and adaptive learning frameworks. This experience has given me deep 
-                insight into translating complex AI research into practical, user-focused solutions.
+                As a Research Assistant at USC's Institute for Creative Technologies, I've developed AI-driven 
+                educational products using LLMs and AWS, gaining deep insight into translating AI research into 
+                practical, user-focused solutions.
               </p>
               <p>
-                Lately, I've been exploring Agentic AI Architectures and their product potential, particularly how 
-                autonomous, goal-driven AI systems can create new opportunities for human-AI collaboration and enhanced 
-                learning experiences. I'm excited about leading product initiatives that harness these emerging 
-                technologies to solve real-world problems.
+                I'm currently exploring Agentic AI Architectures and their potential to create new opportunities 
+                for human-AI collaboration. I'm excited about leading product initiatives that harness these 
+                emerging technologies to solve real-world problems.
               </p>
               <p className="highlight">
                 EPSI Program Management Intern @ Apple  Summer 2025
