@@ -56,24 +56,40 @@ const About = React.memo(() => {
             <h1 className="name">Nick Tran</h1>
             <h2 className="subheader">Welcome to my digital realm!</h2>
             <div className="introduction">
-              <p>
-                I'm an aspiring Program/Technical Program Manager passionate about integrating AI/ML technology 
-                into education. Currently pursuing my Master's in Computer Science at CSU Fullerton with a 
-                specialization in AI & Machine Learning, I combine technical expertise with product development experience.
-              </p>
-              <p>
-                As a Research Assistant at USC's Institute for Creative Technologies, I've developed AI-driven 
-                educational products using LLMs and AWS, gaining deep insight into translating AI research into 
-                practical, user-focused solutions.
-              </p>
-              <p>
-                I'm currently exploring Agentic AI Architectures and their potential to create new opportunities 
-                for human-AI collaboration. I'm excited about leading product initiatives that harness these 
-                emerging technologies to solve real-world problems.
-              </p>
-              <p className="highlight">
-                EPSI Program Management Intern @ Apple  Summer 2025
-              </p>
+              <p className="intro-lead">Technical Program Manager who builds and researches</p>
+              <p>2+ years taking AI software from research to working prototypes. PMP certified.</p>
+
+              <section className="intro-section">
+                <h3>Build</h3>
+                <ul>
+                  <li>
+                    vRyan, an AI teaching agent that answers in text, cloned voice, or video (
+                    <a href="https://www.youtube.com/watch?v=oVIzxT9ghW4" target="_blank" rel="noopener noreferrer">DEMO</a>)
+                  </li>
+                  <li>
+                    QA testing, content checks, and release readiness for PAL3, an adaptive learning platform from USC's{" "}
+                    <a href="https://ict.usc.edu/research/labs-groups/learning-sciences/" target="_blank" rel="noopener noreferrer">Learning Sciences group</a>
+                  </li>
+                  <li>LLM-powered research paper analyzer (web dev, LangChain, AWS)</li>
+                  <li>
+                    SwiftUI front-end code and interaction design for{" "}
+                    <a href="https://machinelearning.apple.com/research/coml" target="_blank" rel="noopener noreferrer">Co-ML</a>,
+                    Apple's on-device ML app
+                  </li>
+                  <li>PlainTalk, which simplifies hospital discharge instructions and translates them into Vietnamese (React, FastAPI)</li>
+                </ul>
+              </section>
+
+              <section className="intro-section">
+                <h3>Research</h3>
+                <ul>
+                  <li>Co-authored the AIED 2025 demo paper on vRyan</li>
+                  <li>Researched RAG, fine-tuning, and model chaining for on-device ML at Apple</li>
+                  <li>Preprocessed code-switching research data on bilingual speakers at UC San Diego</li>
+                  <li>Evaluated PlainTalk's safeguards: on a ten-paragraph test set, the entity-check pass rate rose from 50% to 100%</li>
+                </ul>
+              </section>
+
               <p>
                 Let's connect to explore the frontiers of intelligent, agentic systems!
               </p>
