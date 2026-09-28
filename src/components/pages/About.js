@@ -63,8 +63,7 @@ const About = React.memo(() => {
                 <h3>Build</h3>
                 <ul>
                   <li>
-                    vRyan, an AI teaching agent that answers in text, cloned voice, or video (
-                    <a href="https://www.youtube.com/watch?v=oVIzxT9ghW4" target="_blank" rel="noopener noreferrer">DEMO</a>)
+                  <a href="https://www.youtube.com/watch?v=oVIzxT9ghW4" target="_blank" rel="noopener noreferrer">vRyan</a>, an AI teaching agent that answers in text, cloned voice and video
                   </li>
                   <li>
                     QA testing, content checks, and release readiness for PAL3, an adaptive learning platform from USC's{" "}
@@ -73,8 +72,7 @@ const About = React.memo(() => {
                   <li>LLM-powered research paper analyzer (web dev, LangChain, AWS)</li>
                   <li>
                     SwiftUI front-end code and interaction design for{" "}
-                    <a href="https://machinelearning.apple.com/research/coml" target="_blank" rel="noopener noreferrer">Co-ML</a>,
-                    Apple's on-device ML app
+                    <a href="https://machinelearning.apple.com/research/coml" target="_blank" rel="noopener noreferrer">Co-ML</a>, on-device ML app
                   </li>
                   <li>PlainTalk, which simplifies hospital discharge instructions and translates them into Vietnamese (React, FastAPI)</li>
                 </ul>
