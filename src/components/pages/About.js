@@ -56,7 +56,7 @@ const About = React.memo(() => {
             <h1 className="name">Nick Tran</h1>
             <h2 className="subheader">Welcome to my digital realm!</h2>
             <div className="introduction">
-              <p className="intro-lead">Technical Program Manager who builds and researches</p>
+              <p className="intro-lead">AI Program Manager </p>
               <p>2+ years taking AI software from research to working prototypes. PMP certified.</p>
 
               <section className="intro-section">
@@ -79,17 +79,6 @@ const About = React.memo(() => {
                   <li>PlainTalk, which simplifies hospital discharge instructions and translates them into Vietnamese (React, FastAPI)</li>
                 </ul>
               </section>
-
-              <section className="intro-section">
-                <h3>Research</h3>
-                <ul>
-                  <li>Co-authored the AIED 2025 demo paper on vRyan</li>
-                  <li>Researched RAG, fine-tuning, and model chaining for on-device ML at Apple</li>
-                  <li>Preprocessed code-switching research data on bilingual speakers at UC San Diego</li>
-                  <li>Evaluated PlainTalk's safeguards: on a ten-paragraph test set, the entity-check pass rate rose from 50% to 100%</li>
-                </ul>
-              </section>
-
               <p>
                 Let's connect to explore the frontiers of intelligent, agentic systems!
               </p>
