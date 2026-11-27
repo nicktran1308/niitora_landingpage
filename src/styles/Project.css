@@ -103,9 +103,11 @@
 .project-name {
   font-family: 'Press Start 2P', cursive;
   color: var(--text-color);
-  font-size: clamp(0.8rem, 1.5vw, 1.2rem);
+  font-size: clamp(0.65rem, 1.3vw, 1rem);
+  line-height: 1.7;
   text-align: center;
-  margin-bottom: 1rem;
+  max-width: 82%;
+  margin-bottom: 0;
   text-shadow: 0 0 5px var(--shadow-color);
 }
 
@@ -187,6 +189,7 @@
   position: absolute;
   top: 1rem;
   right: 1rem;
+  z-index: 3;
   width: 35px;
   height: 35px;
   background-color: rgba(0, 0, 0, 0.7);
@@ -198,6 +201,13 @@
   align-items: center;
   justify-content: center;
   box-shadow: 0 0 10px var(--shadow-color);
+  opacity: 0;
+  pointer-events: none;
+}
+
+.project-card.active .github-link {
+  opacity: 1;
+  pointer-events: auto;
 }
 
 .github-icon {
