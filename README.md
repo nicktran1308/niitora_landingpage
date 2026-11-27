@@ -73,6 +73,12 @@ If you encounter errors with `npm run deploy`, see the Troubleshooting section b
 
 ## 🐞 Troubleshooting
 
+- **Clear cache in Google Chrome** after a deploy if the old resume or site is still showing:
+  1. Open the site, right-click the page, and choose **Inspect**.
+  2. Open the **Network** tab and check **Disable cache**. Leave DevTools open.
+  3. Right-click the reload button and choose **Empty cache and hard reload**.
+  4. If it is still stale, open the **Application** tab, click **Clear site data**, then reload.
+
 - If `npm run deploy` fails with an error (e.g., E2BIG), you may need to manually update the `gh-pages` branch.  
   See the manual deployment steps below:
 
