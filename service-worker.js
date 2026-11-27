@@ -14,7 +14,7 @@
  */
 
 // Cache version name - increment this when making significant changes to invalidate old caches
-const CACHE_NAME = 'niitora-cache-v4';
+const CACHE_NAME = 'niitora-cache-v5';
 
 // List of URLs to cache during installation - these are core resources needed for offline functionality
 // Note: PDF files are intentionally excluded to ensure they're always served fresh
@@ -28,7 +28,8 @@ const urlsToCache = [
   './assets/icons/csuf_logo.png',
   './assets/icons/forage_logo.png',
   './assets/icons/i4s_logo.jpg',
-  './assets/icons/usc_logo.jpg'
+  './assets/icons/usc_logo.jpg',
+  './assets/icons/ucsd_bic.jpg'
 ];
 
 /**
@@ -37,6 +38,7 @@ const urlsToCache = [
  * This is where we cache initial resources needed for offline functionality.
  */
 self.addEventListener('install', event => {
+  self.skipWaiting();
   event.waitUntil(
     caches.open(CACHE_NAME)
       .then(cache => cache.addAll(urlsToCache))
@@ -53,7 +55,8 @@ self.addEventListener('install', event => {
 self.addEventListener('fetch', event => {
   // Special handling for PDF files to ensure resume is always up-to-date
   // This ensures when users click to view the resume, they always get the latest version
-  if (event.request.url.endsWith('.pdf')) {
+  const requestUrl = new URL(event.request.url);
+  if (requestUrl.pathname.endsWith('.pdf')) {
     event.respondWith(
       fetch(event.request, { cache: 'no-store' }) // Force fresh fetch from network
         .catch(error => {
@@ -65,10 +68,29 @@ self.addEventListener('fetch', event => {
     return;
   }
   
-  // Standard cache-first strategy for non-PDF resources
-  // 1. Check cache first
-  // 2. If not in cache, fetch from network
-  // 3. If fetch successful, store in cache for future
+  // HTML, scripts, and styles use network-first so a new deploy is not stuck
+  // behind an older cached copy of the site.
+  const isAppShell = event.request.mode === 'navigate'
+    || requestUrl.pathname.endsWith('.js')
+    || requestUrl.pathname.endsWith('.css')
+    || requestUrl.pathname.endsWith('.html');
+
+  if (isAppShell) {
+    event.respondWith(
+      fetch(event.request)
+        .then(response => {
+          if (response && response.status === 200) {
+            const responseToCache = response.clone();
+            caches.open(CACHE_NAME).then(cache => cache.put(event.request, responseToCache));
+          }
+          return response;
+        })
+        .catch(() => caches.match(event.request))
+    );
+    return;
+  }
+
+  // Standard cache-first strategy for images and other static files
   event.respondWith(
     caches.match(event.request)
       .then(response => {
@@ -117,6 +139,6 @@ self.addEventListener('activate', event => {
           }
         })
       );
-    })
+    }).then(() => self.clients.claim())
   );
 }); 
