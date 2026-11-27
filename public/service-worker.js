@@ -14,7 +14,7 @@
  */
 
 // Cache version name - increment this when making significant changes to invalidate old caches
-const CACHE_NAME = 'niitora-cache-v6';
+const CACHE_NAME = 'niitora-cache-v7';
 
 // List of URLs to cache during installation - these are core resources needed for offline functionality
 // Note: PDF files are intentionally excluded to ensure they're always served fresh
@@ -30,7 +30,8 @@ const urlsToCache = [
   './assets/icons/i4s_logo.jpg',
   './assets/icons/usc_logo.jpg',
   './assets/icons/ucsd_bic.jpg',
-  './assets/icons/apple_education.png'
+  './assets/icons/apple_education.png',
+  './assets/icons/plaintalk.jpg'
 ];
 
 /**

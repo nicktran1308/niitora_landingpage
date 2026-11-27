@@ -55,6 +55,12 @@ const projects = [
     image: `${process.env.PUBLIC_URL}/assets/icons/apple_education.png`,
     github: null,
     link: "https://www.apple.com/education-initiative/"
+  },
+  {
+    id: 9,
+    name: "Plaintalk",
+    image: `${process.env.PUBLIC_URL}/assets/icons/plaintalk.jpg`,
+    github: "https://github.com/nicktran1308/plaintak_final_project"
   }
 ];
 
