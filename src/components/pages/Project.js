@@ -48,6 +48,13 @@ const projects = [
     image: `${process.env.PUBLIC_URL}/assets/icons/ucsd_bic.jpg`,
     github: null,
     link: "https://sites.google.com/site/annebeattymartinez/Research/code-switching-research?authuser=0"
+  },
+  {
+    id: 8,
+    name: "Community Education Initiatives (AI/ML)",
+    image: `${process.env.PUBLIC_URL}/assets/icons/apple_education.png`,
+    github: null,
+    link: "https://www.apple.com/education-initiative/"
   }
 ];
 
